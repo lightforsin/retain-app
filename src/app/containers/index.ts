@@ -1,1 +1,2 @@
-export { MainComponent } from './main';
+export { Main } from './main';
+export { NotesContainer } from './notes';
