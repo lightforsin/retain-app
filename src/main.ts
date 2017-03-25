@@ -8,6 +8,7 @@ import { NotesContainer } from './app/containers';
 import { AppBarComponent } from './app/ui';
 import { NoteCardComponent } from './app/ui';
 import { NoteCreatorComponent } from './app/ui';
+import { ColorPickerComponent } from './app/ui';
 
 @NgModule({
     declarations: [
@@ -16,7 +17,8 @@ import { NoteCreatorComponent } from './app/ui';
         NotesContainer,
         AppBarComponent,
         NoteCardComponent,
-        NoteCreatorComponent
+        NoteCreatorComponent,
+        ColorPickerComponent
     ],
     imports: [BrowserModule, FormsModule],
     bootstrap: [AppComponent]

@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'notes-container',
-    styleUrls: ['./app/containers/notes.css'],
-    templateUrl: './app/containers/notes.html'
+    styleUrls: ['./app/containers/notes/notes.css'],
+    templateUrl: './app/containers/notes/notes.html'
 })
 export class NotesContainer {
     notes = [

@@ -2,8 +2,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'note-card',
-    styleUrls: ['./app/ui/note-card.css'],
-    templateUrl: './app/ui/note-card.html'
+    styleUrls: ['./app/ui/note-card/note-card.css'],
+    templateUrl: './app/ui/note-card/note-card.html'
 })
 export class NoteCardComponent {
     @Input() note;
