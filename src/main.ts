@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppComponent } from './app';
+import { HttpModule } from '@angular/http';
+import { AppComponent, providers } from './app';
 import { Main } from './app/containers';
 import { NotesContainer } from './app/containers';
 import { AppBarComponent } from './app/ui';
@@ -20,7 +21,8 @@ import { ColorPickerComponent } from './app/ui';
         NoteCreatorComponent,
         ColorPickerComponent
     ],
-    imports: [BrowserModule, FormsModule],
+    providers: [providers],
+    imports: [BrowserModule, FormsModule, HttpModule],
     bootstrap: [AppComponent]
 })
 export class AppModule {};
