@@ -18,6 +18,6 @@ export class NoteService {
     }
 
     completeNote(note) {
-        return this._api.delete(`${this.path}${note.id}`);
+        return this._api.delete(`${this.path}/${note.id}`);
     }
 }

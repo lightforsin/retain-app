@@ -45,7 +45,7 @@ export class ApiService {
         return this._http.post(
             `${this.api_url}${path}`, 
             JSON.stringify(body),
-            this.headers)
+            {headers: this.headers})
         .map(this.checkForError)
         .catch(err => Observable.throw(err))
         .map(this.getJson);
@@ -54,7 +54,7 @@ export class ApiService {
     delete(path: string): Observable<any> {
         return this._http.delete(
             `${this.api_url}${path}`, 
-            this.headers)
+            {headers: this.headers})
         .map(this.checkForError)
         .catch(err => Observable.throw(err))
         .map(this.getJson);
