@@ -7,7 +7,8 @@ import { AppComponent, providers, routes } from './app';
 import { 
     MainComponent, 
     NotesContainer, 
-    AboutComponent 
+    AboutComponent ,
+    AuthComponent
 } from './app/containers';
 import { 
     AppBarComponent, 
@@ -25,7 +26,8 @@ import {
         NoteCardComponent,
         NoteCreatorComponent,
         ColorPickerComponent, 
-        AboutComponent
+        AboutComponent,
+        AuthComponent
     ],
     providers: [providers],
     imports: [
