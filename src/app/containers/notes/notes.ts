@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NoteService } from '../../services';
+import { Store } from '../../store';
 
 @Component({
     selector: 'notes-container',
@@ -10,21 +11,27 @@ export class NotesContainer {
     notes = []
     doneNotes = [];
     
-    constructor(private _noteService: NoteService) {
+    constructor(
+        private _noteService: NoteService,
+        private _store: Store
+    ) {
         this.getNotes();
     }
 
     private getNotes() {
         this._noteService
             .getNotes()
-            .subscribe(response => this.notes = response.data);
+            .subscribe();
+
+        this._store.changes
+            .map(data => data.notes)
+            .subscribe(notes => this.notes = notes);
     }
 
     onNoteChecked(note) {
         this._noteService
             .completeNote(note)
             .subscribe(note => {
-                this.getNotes();
                 this.doneNotes.push(note);
         });
     }
@@ -32,6 +39,6 @@ export class NotesContainer {
     onCreateNote(note) {
         this._noteService
             .createNote(note)
-            .subscribe(note => this.getNotes());
+            .subscribe();
     }
 }
