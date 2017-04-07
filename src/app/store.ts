@@ -9,7 +9,6 @@ export interface Note {
     id?: string | number
     createdAt?: string
     updatedAt?: string
-    userId?: string
 }
 
 export interface User {

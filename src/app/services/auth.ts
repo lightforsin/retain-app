@@ -9,7 +9,6 @@ import 'rxjs/Rx';
 @Injectable()
 export class AuthService implements CanActivate {
     JWT_KEY: string = 'retain_token';
-    JWT: string = 'asdf';
 
     constructor(
         private _router: Router,
@@ -30,7 +29,7 @@ export class AuthService implements CanActivate {
     }
 
     isAuthorized(): boolean {
-        return Boolean(this.JWT);
+        return Boolean(window.localStorage.getItem(this.JWT_KEY)); 
     }
 
     canActivate(): boolean {
